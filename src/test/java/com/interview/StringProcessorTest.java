@@ -4,8 +4,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-import org.junit.jupiter.api.Assertions;
-
 
 /**
  * Unit test for simple StringProcessor.
@@ -15,9 +13,9 @@ public class StringProcessorTest {
 	public void testRemoveConsecutiveChars() {
 	       String input = "aabcccbbad";
 	       String result = input;
-
+	       RemoveConsecutiveChars removeConsecutiveChars = new RemoveConsecutiveChars();
 	       while (true) {
-	           String nextResult = StringProcessor.removeConsecutiveChars(result);
+	           String nextResult = removeConsecutiveChars.process(result);
 	           if (nextResult.equals(result)) {
 	               break;
 	           }
@@ -33,9 +31,9 @@ public class StringProcessorTest {
 	public void testReplaceConsecutiveChars() {
 	       String input = "abcccbad";
 	       String result = input;
-
+	       ReplaceConsecutiveChars replaceConsecutiveChars = new ReplaceConsecutiveChars();
 	       while (true) {
-	           String nextResult = StringProcessor.replaceConsecutiveChars(result);
+	           String nextResult = replaceConsecutiveChars.process(result);
 	           if (nextResult.equals(result)) {
 	               break;
 	           }
