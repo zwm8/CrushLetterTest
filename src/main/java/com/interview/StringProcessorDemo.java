@@ -11,22 +11,6 @@ public class StringProcessorDemo {
 		return str.matches("^[a-z]+$");
 	}
 
-	public static void main3(String[] args) {
-		List<String> strings = Arrays.asList("  Hello, World!  ", "Java 8", "Streams API");
-
-		// 使用UpperCaseProcessor处理字符串
-		List<String> upperCaseStrings = strings.stream().map(s -> new RemoveConsecutiveChars().process(s))
-				.collect(Collectors.toList());
-
-		// 使用TrimProcessor处理字符串
-		List<String> trimmedStrings = strings.stream().map(s -> new ReplaceConsecutiveChars().process(s))
-				.collect(Collectors.toList());
-
-		// 输出处理后的字符串列表
-		System.out.println("Upper case strings: " + upperCaseStrings);
-		System.out.println("Trimmed strings: " + trimmedStrings);
-	}
-
 	public static void main(String[] args) {
 		String input = "aabcccbbad";
 		String result = input;
@@ -34,7 +18,7 @@ public class StringProcessorDemo {
 			System.out.println("-> " + result);
 			return;
 		}
-		System.out.println(""  + result+" RemoveConsecutiveChars");
+		System.out.println("" + result + " RemoveConsecutiveChars");
 		RemoveConsecutiveChars removeConsecutiveChars = new RemoveConsecutiveChars();
 		while (true) {
 			String nextResult = removeConsecutiveChars.process(result);
@@ -44,9 +28,9 @@ public class StringProcessorDemo {
 			result = nextResult;
 			System.out.println("-> " + result);
 		}
-		
+
 		result = "abcccbad";
-		System.out.println(""  + input+" ReplaceConsecutiveChars");
+		System.out.println("" + result + " ReplaceConsecutiveChars");
 		ReplaceConsecutiveChars replaceConsecutiveChars = new ReplaceConsecutiveChars();
 		while (true) {
 			String nextResult = replaceConsecutiveChars.process(result);
