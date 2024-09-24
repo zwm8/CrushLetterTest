@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class StringProcessorDemo {
+	//Determine whether the string only contains  letters a-z
 	public static boolean isLowerCaseAlphaRegex(String str) {
 		// Regular expression: ^ [a-z]+$represents a string starting with a-z and
 		// consisting entirely of a-z until the end of the string
@@ -31,6 +32,10 @@ public class StringProcessorDemo {
 
 		result = "abcccbad";
 		System.out.println("" + result + " ReplaceConsecutiveChars");
+		if (false == isLowerCaseAlphaRegex(input)) {
+			System.out.println("-> " + result);
+			return;
+		}
 		ReplaceConsecutiveChars replaceConsecutiveChars = new ReplaceConsecutiveChars();
 		while (true) {
 			String nextResult = replaceConsecutiveChars.process(result);
